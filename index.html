@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <ul class="menu">
+                <li>
+                    <a href="index.html">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="tracking.html">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Tracking</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="geofence.html">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Geofence</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="alert.html">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Alerts</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="register.html">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Registered vehicle</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="setting.html">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Setting</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="header--wrapper">
+            <div class="header-title">
+                <span>Primary</span>
+                <h2>Dashboard</h2>
+            </div>
+            <div class="user--info">
+                <div class="search-box">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" placeholder="Search">
+                </div>
+                <img src="img/images.jpg" alt="">
+            </div>
+        </div>
+
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Vehicle no.</th>
+                    <th scope="col">speed</th>
+                    <th scope="col">Overspeed Alerts</th>
+                    <th scope="col">Action</th>
+                    <th scope="col">location</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">DL 12 TC 0204</th>
+                    <td>40km/hr</td>
+                    <td>80km/hr</td>
+                    <td>Call</td>
+                    <td>Click Here</td>
+                </tr>
+                <tr>
+                    <th scope="row">HR 26 DQ 5551</th>
+                    <td>30km/hr</td>
+                    <td>80km/hr</td>
+                    <td>Call</td>
+                    <td>Click here</td>
+                </tr>
+                <tr>
+                    <th scope="row">RJ 26 DR 8883</th>
+                    <td>30km/hr</td>
+                    <td>80km/hr</td>
+                    <td>Call</td>
+                    <a href="/tracking.html">
+                    <td>Click Here</td></a>
+                </tr>
+            </tbody>
+        </table>
+
+ <div class="classess">
+        <div class="locate">
+
+            <h3>Click the button to get those coordinates.</h3>
+        
+            <button onclick="getLocation()">Try It</button>
+            
+            <p id="demo"></p>
+            <p>{ busId: '186', position:'{"speed":null,"accuracy":81.15007979037921,
+                "altitudeAccuracy":10,"altitude":9.457816123962402,"longitude":-54.950113117326524,
+                "heading":null,"latitude":-34.93604986481545}'}</p>
+            <script>
+            var x = document.getElementById("demo");
+            
+            function getLocation() {
+              if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+              } else { 
+                HTML = "Geolocation is not supported by this browser.";
+              }
+            }
+            
+            function showPosition(position) {
+              x.innerHTML = "fe80::c8fb:34:fec5:a946" + position.coords.latitude + 
+              "<br> " + position.coords.longitude;
+            }
+            </script>
+
+            <div class="navig">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14009.408348883217!2d77.40579601420751!3d28.619207943491553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cee4abb9de49b%3A0x287a032bd7ff51f1!2sGaur%20City%202%2C%20Ghaziabad%2C%20Uttar%20Pradesh%20201009!5e0!3m2!1sen!2sin!4v1689236439845!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+    </div>
+</body>
+
+</html>
